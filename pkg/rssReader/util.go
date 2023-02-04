@@ -40,9 +40,9 @@ func parseRssItems(responseRssItems []responseRssItem) ([]RssItem, error) {
 		rssItem.Link = item.Link
 		rssItem.Description = item.Description
 
-		// TODO - maybe handle more time formats - found this format on w3schools
+		// TODO - maybe handle more time formats - found multiple time formats
 		if len(item.PublishDate) > 0 {
-			pubDate, err := time.Parse("Mon, 02 Jan 2006", item.PublishDate)
+			pubDate, err := time.Parse("Mon, 02 Jan 2006 15:04:05 -0700", item.PublishDate)
 			if err != nil {
 				return nil, err
 			}

@@ -5,9 +5,9 @@ import "time"
 type RssItem struct {
 	Title       string    `json:"title"`
 	Source      string    `json:"source"`
-	SourceUrl   string    `json:"sourceUrl"`
+	SourceUrl   string    `json:"source_url"`
 	Link        string    `json:"link"`
-	PublishDate time.Time `json:"pubDate"`
+	PublishDate time.Time `json:"publish_date"`
 	Description string    `json:"description"`
 }
 

@@ -23,7 +23,7 @@ func TestParse(t *testing.T) {
     <link>https://www.w3schools.com/xml/xml_rss.asp</link>
     <description>New RSS tutorial on W3Schools</description>
 	<source url="https://www.w3schools.com">W3Schools.com</source>
-    <pubDate>Thu, 27 Apr 2006</pubDate>
+    <pubDate>Thu, 27 Apr 2006 09:00:00 +0000</pubDate>
   </item>
   <item>
 	<title>Item 2</title>
@@ -57,7 +57,7 @@ func TestParse(t *testing.T) {
 	assert.Equal(t, "https://www.w3schools.com", item1.SourceUrl)
 	assert.Equal(t, "New RSS tutorial on W3Schools", item1.Description)
 
-	pubTime, err := time.Parse("2006-01-02 15:04:05 +0000", "2006-04-27 00:00:00 +0000")
+	pubTime, err := time.Parse("2006-01-02 15:04:05 -0700", "2006-04-27 09:00:00 +0000")
 	assert.NoError(t, err)
 	assert.Equal(t, pubTime, item1.PublishDate)
 
